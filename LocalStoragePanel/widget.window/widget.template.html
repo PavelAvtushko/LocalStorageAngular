@@ -1,0 +1,13 @@
+<div id="localStorageWidget">
+    <div class="loading" ng-hide="check">Loading...</div>
+    <div class='list' ng-show="check">
+        <button ng-click="hideForm()">X</button>
+        <ul>
+            <a class="list-group-item" ng-hide="listLength()">storage is empty... </a>
+            <a class="list-group-item" ng-repeat="(key, value) in data" ng-click="hightlightItem(value)">{{value}}
+                <button ng-click="removeItem(key, value)">X</button>
+            </a>
+        </ul>
+        <button ng-click="clearForm()" ng-if="listLength()">Clear storage</button>
+    </div>
+</div>
